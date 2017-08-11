@@ -1,0 +1,25 @@
+$maze-color: blue;
+$cell-size: 15px;
+
+.maze {
+  display: table;
+}
+
+.mazeRow {
+  display: table-row;
+}
+
+.mazeCell {
+  display: table-cell;
+
+  width: $cell-size;
+  height: $cell-size;
+}
+
+.wall {
+  background: $maze-color
+}
+
+.tortoise {
+  background: red
+}
