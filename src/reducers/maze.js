@@ -1,5 +1,9 @@
 import _ from 'lodash'
 
+export const newMaze = () => ({
+  type: 'NEW_MAZE'
+})
+
 const mazeGenerator = (rows, columns) => {
   const map = Array(rows).fill().map(_ => Array(columns).fill().map(_ => 1));
   const directions = [
@@ -45,7 +49,14 @@ const mazeGenerator = (rows, columns) => {
 }
 
 export default (state = {map: []}, action) => {
-  return {
-    map: mazeGenerator(21, 21)
+  switch (action.type)
+  {
+    case 'NEW_MAZE':
+      return {
+        ...state,
+        map: mazeGenerator(31, 31),
+      }
+    default:
+      return state;
   }
 }
